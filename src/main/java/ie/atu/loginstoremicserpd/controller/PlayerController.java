@@ -43,9 +43,4 @@ public class PlayerController {
     public ResponseEntity<Player> getByNickname(@PathVariable String nickname) {
         return ResponseEntity.status(HttpStatus.OK).body(playerService.getPlayerByNickname(nickname));
     }
-
-    @GetMapping("/addCredit/{nickname}&{credit}")
-    public ResponseEntity<String> addCredit(@PathVariable("nickname") String nickname,@PathVariable("credit") int credit) {
-        return ResponseEntity.ok(playerService.addCredit(credit,nickname));
-    }
 }

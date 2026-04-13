@@ -44,11 +44,4 @@ public class PlayerService {
     public Player getPlayerByNickname(String nickname){
         return playerRepo.getByNickname(nickname);
     }
-
-    public String addCredit(double credit, String nickname){
-        Player temp = playerRepo.getByNickname(nickname);
-        temp.setCredit(temp.getCredit()+credit);
-        playerRepo.save(temp);
-        return "Credit added successfully";
-    }
 }
